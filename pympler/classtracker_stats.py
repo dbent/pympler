@@ -391,6 +391,9 @@ class ConsoleStats(Stats):
                 'pct'
             ))
             for classname in classlist:
+                if classname not in classes:
+                    continue
+
                 info = classes[classname]
                 fobj.write('  %-33s %11d %12s %12s %4d%%\n' % (
                     trunc(classname, 33),
